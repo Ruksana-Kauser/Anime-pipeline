@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h3>List of Animes for your reference. </h3>
+
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">S.No.</th>
+            <th scope="col">Name</th>
+            <th scope="col">Genre</th>
+            <th scope="col">Ratings</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for i in n %}
+          <tr>
+            <th scope="row">{{loop.index}}</th>
+            <td>{{i}}</td>
+            <td>{{g[loop.index]}}</td>
+            <td>{{r[loop.index]}}</td>
+          </tr>
+          {% endfor %}
+        
+          
+        </tbody>
+      </table>
+
+</div>
+
+
+{% endblock body %}

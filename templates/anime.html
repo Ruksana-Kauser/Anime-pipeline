@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h1>Search for your Anime here : </h1>
+
+<div class="container">
+<form action="/anime" method = "POST">
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Enter your anime</label>
+    <input type="text" class="form-control" name = "anime" id="exampleFormControlInput1" required >
+  </div>
+  <input class="btn btn-primary" type="submit" value="Submit">
+</form>
+</div>
+
+{% if boom == 100 %}
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">S.No.</th>
+            <th scope="col">Name</th>
+            <th scope="col">Genre</th>
+            <th scope="col">Ratings</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for i in n %}
+          <tr>
+            <th scope="row">{{loop.index}}</th>
+            <td>{{i}}</td>
+            <td>{{g[loop.index -1]}}</td>
+            <td>{{r[loop.index -1]}}</td>
+          </tr>
+          {% endfor %}
+        
+          
+        </tbody>
+      </table>
+
+</div>
+{% endif %}
+{% endblock body %}
+
+
+
+
